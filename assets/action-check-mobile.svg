@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="802" viewBox="0 0 440 802" role="img" aria-labelledby="title desc" xml:lang="ko">
+  <title id="title">모르겠어요 — 모델 라벨과 별도로 다음 행동 안내</title>
+  <desc id="desc">배송 안내 합성 예시의 행동 확인을 설명하는 도식입니다. 최종 Safe이고 피해 상황이 없을 때 송금·정보 전달·앱 또는 기기 접근을 요구받았는지 묻습니다. 모르겠어요를 선택하면 행동을 보류하고 알고 있던 공식 경로에서 확인하도록 안내합니다. 답변은 모델 라벨을 바꾸지 않습니다. 선택 테두리, 연결선, 결과 테두리만 순서대로 강조하며 본문은 움직이지 않습니다. 실제 분석 화면이나 실시간 결과가 아닙니다. 모션 감소 시 정적으로 표시합니다.</desc>
+  <defs></defs>
+  <style>
+    text{font-family:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;letter-spacing:-.35px}
+    .numeric{font-variant-numeric:tabular-nums;letter-spacing:-1px}
+    .step-focus,.wire-motion,.focus-ring{opacity:0}
+    .wire-motion{transform-box:fill-box;transform-origin:left center}
+    .vertical{transform-origin:center top}.vertical.reverse-y{transform-origin:center bottom}.reverse{transform-origin:right center}
+    @media(prefers-reduced-motion:no-preference){
+      .step-focus,.focus-ring{animation:focus 10s linear infinite both;animation-delay:var(--delay,0s)}
+      .wire-motion{animation:connect 10s linear infinite both;animation-delay:var(--delay,0s)}
+      .wire-motion.vertical{animation-name:connect-down}
+    }
+    @keyframes focus{0%,2%,25%,100%{opacity:0}6%,20%{opacity:1}}
+    @keyframes connect{0%{opacity:0;transform:scaleX(.04)}1%{opacity:1}10%,14%{opacity:1;transform:scaleX(1)}18%,100%{opacity:0;transform:scaleX(1)}}
+    @keyframes connect-down{0%{opacity:0;transform:scaleY(.04)}1%{opacity:1}10%,14%{opacity:1;transform:scaleY(1)}18%,100%{opacity:0;transform:scaleY(1)}}
+  </style>
+  <rect x="1" y="1" width="438" height="800" rx="14" fill="#FFF" stroke="#E3E8EF"/>
+  <g transform="translate(24 25) scale(0.875)" aria-hidden="true"><rect x="0" y="0" width="32" height="32" rx="8" fill="#101828" /><rect x="11" y="5" width="10" height="22" rx="5" fill="#FFF" /><circle cx="16" cy="10" r="2.7" fill="#F04438"/><circle cx="16" cy="16" r="2.7" fill="#FFAB16"/><circle cx="16" cy="22" r="2.7" fill="#19B980"/></g>
+  <text x="64" y="47" font-size="21" fill="#101828" font-weight="750" >피싱 신호등</text>
+  <text x="416" y="46" font-size="12" fill="#596779" font-weight="550" text-anchor="end" letter-spacing=".8">ACTION CHECK</text>
+  <path d="M24 76H416" fill="none" stroke="#E3E8EF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="24" y="128" font-size="32" fill="#101828" font-weight="750" >모르겠다면,</text>
+  <text x="24" y="171" font-size="32" fill="#2563D9" font-weight="750" >행동을 잠시 멈춥니다.</text>
+  <text x="24" y="212" font-size="20" fill="#596779" font-weight="400" >최종 Safe · 피해 상황 없음</text>
+  <rect x="24" y="245" width="392" height="210" rx="12" fill="#F5F8FC" />
+  <text x="48" y="285" font-size="24" fill="#101828" font-weight="650" >이런 행동을 요구받았나요?</text>
+  <text x="48" y="325" font-size="20" fill="#596779" font-weight="400" >송금·정보 전달·앱/기기 접근</text>
+  <rect x="48" y="365" width="82" height="56" rx="9" fill="#E7EDF4" />
+  <rect x="140" y="365" width="82" height="56" rx="9" fill="#E7EDF4" />
+  <rect x="232" y="365" width="160" height="56" rx="9" fill="#101828" />
+  <rect x="232" y="365" width="160" height="56" rx="9" fill="none" class="focus-ring" stroke="#2563D9" stroke-width="3" aria-hidden="true"/>
+  <text x="89" y="400" font-size="19" fill="#596779" font-weight="500" text-anchor="middle">있어요</text>
+  <text x="181" y="400" font-size="19" fill="#596779" font-weight="500" text-anchor="middle">없어요</text>
+  <text x="312" y="400" font-size="20" fill="#FFF" font-weight="650" text-anchor="middle">모르겠어요</text>
+  <path d="M220 466L220 502" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M215 495L220 502L225 495" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="219" y="466" width="2" height="36" rx="0" fill="#2563D9" class="wire-motion vertical" style="--delay:1.6s" aria-hidden="true"/>
+  <rect x="24" y="515" width="392" height="173" rx="12" fill="#FFF8E8" stroke="#EFDEB6"/>
+  <rect x="24" y="515" width="392" height="173" rx="12" fill="none" class="focus-ring" style="--delay:3s" stroke="#B17D1B" stroke-width="2" aria-hidden="true"/>
+  <text x="48" y="551" font-size="19" fill="#8C600B" font-weight="600" >다음 행동</text>
+  <text x="48" y="590" font-size="25" fill="#101828" font-weight="650" >행동 보류 · 공식 경로 확인</text>
+  <text x="48" y="628" font-size="19" fill="#596779" font-weight="400" >송금·정보 전달·앱 설치를 멈추고</text>
+  <text x="48" y="658" font-size="19" fill="#596779" font-weight="400" >알고 있던 공식 경로로 확인합니다.</text>
+  <text x="24" y="737" font-size="19" fill="#596779" font-weight="400" >답변은 모델 라벨을 바꾸지 않습니다.</text>
+  <text x="24" y="771" font-size="18" fill="#596779" font-weight="400" >설명용 배송 안내 예시</text>
+</svg>

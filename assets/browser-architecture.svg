@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="550" viewBox="0 0 1280 550" role="img" aria-labelledby="title desc" xml:lang="ko">
+  <title id="title">연락은 내 브라우저에서 분석합니다</title>
+  <desc id="desc">연락 원문과 행동 확인 답변은 사용자 브라우저 안에서 처리합니다. 입력·결과 화면은 토큰화, 규칙 보정과 행동 확인을 담당하며 ONNX Runtime Web은 Web Worker와 WASM으로 모델을 실행합니다. Cloudflare R2에서 약 223MB 모델을 내려받습니다. Supabase의 사례 조회·참여, Vercel Analytics의 이용 통계는 별도 외부 통신입니다. 연락 원문과 답변을 외부 AI 추론 API에 보내지 않습니다. 모델 다운로드는 한 번 강조하고, 브라우저 내부 입력·결과 전달 방향을 순서대로 반복합니다. 사례·통계는 분석과 별도 통신으로 구분합니다. 모션은 실제 실행 시간이나 모든 네트워크 요청을 뜻하지 않습니다. 모션 감소 시 정적으로 표시됩니다.</desc>
+  <style>
+    text{font-family:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;letter-spacing:-.35px}
+    .numeric{font-variant-numeric:tabular-nums;letter-spacing:-1px}
+    .wire-motion,.wire-head{opacity:0}
+    .wire-motion{transform-box:fill-box;transform-origin:left center}
+    .vertical{transform-origin:center top}.vertical.reverse-y{transform-origin:center bottom}.reverse{transform-origin:right center}
+    @media(prefers-reduced-motion:no-preference){
+      .wire-motion{animation:connect 10s linear infinite both;animation-delay:var(--delay,0s)}
+      .wire-motion.vertical{animation-name:connect-down}
+      .wire-head{animation:arrive-head 10s linear infinite both;animation-delay:var(--delay,0s)}
+      .download-motion{animation-iteration-count:1}
+    }
+    @keyframes connect{0%{opacity:0;transform:scaleX(.04)}1%{opacity:1}10%,20%{opacity:1;transform:scaleX(1)}25%,100%{opacity:0;transform:scaleX(1)}}
+    @keyframes connect-down{0%{opacity:0;transform:scaleY(.04)}1%{opacity:1}10%,20%{opacity:1;transform:scaleY(1)}25%,100%{opacity:0;transform:scaleY(1)}}
+    @keyframes arrive-head{0%,9%,25%,100%{opacity:0}10%,20%{opacity:1}}
+  </style>
+  <rect width="1280" height="550" rx="14" fill="#FFF"/>
+  <g id="diagram-header">
+    <g transform="translate(40 25) scale(1)" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#101828"/><rect x="11" y="5" width="10" height="22" rx="5" fill="#FFF"/><circle cx="16" cy="10" r="2.7" fill="#F04438"/><circle cx="16" cy="16" r="2.7" fill="#FFAB16"/><circle cx="16" cy="22" r="2.7" fill="#19B980"/></g>
+    <text id="header-brand" x="86" y="53" font-size="28" fill="#101828" font-weight="750">피싱 신호등</text>
+    <text id="header-page" x="250" y="51" font-size="16" fill="#2563D9" font-weight="650" style="letter-spacing:1px">ARCHITECTURE</text>
+    <text id="header-detail" x="1240" y="51" font-size="16" fill="#596779" text-anchor="end">브라우저 안팎의 처리와 통신</text>
+    <path d="M40 80H1240" fill="none" stroke="#E3E8EF" stroke-width="1"/>
+  </g>
+  <rect id="browser-card" x="40" y="128" width="770" height="368" rx="14" fill="#F6F9FF"/>
+  <text x="64" y="180.25" font-size="27" fill="#101828" font-weight="650">사용자 브라우저</text>
+  <text x="786" y="178" font-size="20" fill="#2563D9" font-weight="500" text-anchor="end">연락 원문·답변은 기기 안에</text>
+  <rect id="input-card" x="64" y="216" width="300" height="200" rx="10" fill="#FFF"/>
+  <rect id="runtime-card" x="486" y="216" width="300" height="200" rx="10" fill="#FFF"/>
+  <g id="input-copy" text-anchor="middle"><text x="214" y="305.46" font-size="25" fill="#101828" font-weight="650">입력·결과 화면</text><text x="214" y="343.46" font-size="19" fill="#596779" font-weight="400">토큰화 · 규칙 보정 · 행동 확인</text></g>
+  <g id="runtime-copy" text-anchor="middle"><text x="636" y="305.14" font-size="25" fill="#101828" font-weight="650">ONNX Runtime Web</text><text x="636" y="343.14" font-size="21" fill="#2563D9" font-weight="500">Web Worker · WASM</text></g>
+  <path d="M372 286L478 286M471 281L478 286L471 291" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="372" y="285" width="106" height="2" rx="0" fill="#2563D9" class="wire-motion" style="--delay:2s" aria-hidden="true"/><path d="M471 281L478 286L471 291" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head" style="--delay:2s" aria-hidden="true"/>
+  <path d="M478 354L372 354M379 349L372 354L379 359" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="372" y="353" width="106" height="2" rx="0" fill="#2563D9" class="wire-motion reverse" style="--delay:5s" aria-hidden="true"/><path d="M379 349L372 354L379 359" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head" style="--delay:5s" aria-hidden="true"/>
+  <text x="425" y="266" font-size="18" fill="#596779" font-weight="400" text-anchor="middle">입력</text>
+  <text x="425" y="382" font-size="18" fill="#596779" font-weight="400" text-anchor="middle">결과</text>
+  <rect id="model-card" x="912" y="128" width="328" height="96" rx="10" fill="#F5F8FC"/>
+  <g id="model-copy" text-anchor="middle"><text x="1076" y="167.3" font-size="25" fill="#101828" font-weight="650">Cloudflare R2</text><text x="1076" y="201.3" font-size="20" fill="#596779" font-weight="400">모델 다운로드 · 약 223MB</text></g>
+  <rect id="cases-card" x="912" y="264" width="328" height="96" rx="10" fill="#F5F8FC"/>
+  <g id="cases-copy" text-anchor="middle"><text x="1076" y="303.3" font-size="25" fill="#101828" font-weight="650">Supabase</text><text x="1076" y="337.3" font-size="20" fill="#596779" font-weight="400">사례 조회 · 참여</text></g>
+  <rect id="analytics-card" x="912" y="400" width="328" height="96" rx="10" fill="#F5F8FC"/>
+  <g id="analytics-copy" text-anchor="middle"><text x="1076" y="439.3" font-size="25" fill="#101828" font-weight="650">Vercel Analytics</text><text x="1076" y="473.3" font-size="20" fill="#596779" font-weight="400">이용 통계</text></g>
+  <path d="M904 176L818 176M825 171L818 176L825 181" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="818" y="175" width="86" height="2" rx="0" fill="#2563D9" class="wire-motion reverse download-motion" style="--delay:0s" aria-hidden="true"/><path d="M825 171L818 176L825 181" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head download-motion" style="--delay:0s" aria-hidden="true"/>
+  <path d="M818 302L904 302" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-dasharray="4 5" stroke-linecap="round"/><path d="M897 297L904 302L897 307" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M904 322L818 322" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-dasharray="4 5" stroke-linecap="round"/><path d="M825 317L818 322L825 327" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M818 448L904 448" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-dasharray="4 5" stroke-linecap="round"/><path d="M897 443L904 448L897 453" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="918" viewBox="0 0 440 918" role="img" aria-labelledby="title desc" xml:lang="ko">
+  <title id="title">브라우저 안에서 분석</title>
+  <desc id="desc">연락 원문과 행동 확인 답변은 사용자 브라우저 안에서 처리합니다. 입력·결과 화면은 토큰화, 규칙 보정과 행동 확인을 담당하며 ONNX Runtime Web은 Web Worker와 WASM으로 모델을 실행합니다. Cloudflare R2에서 약 223MB 모델을 내려받습니다. Supabase의 사례 조회·참여, Vercel Analytics의 이용 통계는 별도 외부 통신입니다. 연락 원문과 답변을 외부 AI 추론 API에 보내지 않습니다. 모델 다운로드는 한 번 강조하고, 브라우저 내부 입력·결과 전달 방향을 순서대로 반복합니다. 사례·통계는 분석과 별도 통신으로 구분합니다. 모션은 실제 실행 시간이나 모든 네트워크 요청을 뜻하지 않습니다. 모션 감소 시 정적으로 표시됩니다.</desc>
+  <style>
+    text{font-family:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;letter-spacing:-.35px}
+    .numeric{font-variant-numeric:tabular-nums;letter-spacing:-1px}
+    .wire-motion,.wire-head{opacity:0}
+    .wire-motion{transform-box:fill-box;transform-origin:left center}
+    .vertical{transform-origin:center top}.vertical.reverse-y{transform-origin:center bottom}.reverse{transform-origin:right center}
+    @media(prefers-reduced-motion:no-preference){
+      .wire-motion{animation:connect 10s linear infinite both;animation-delay:var(--delay,0s)}
+      .wire-motion.vertical{animation-name:connect-down}
+      .wire-head{animation:arrive-head 10s linear infinite both;animation-delay:var(--delay,0s)}
+      .download-motion{animation-iteration-count:1}
+    }
+    @keyframes connect{0%{opacity:0;transform:scaleX(.04)}1%{opacity:1}10%,20%{opacity:1;transform:scaleX(1)}25%,100%{opacity:0;transform:scaleX(1)}}
+    @keyframes connect-down{0%{opacity:0;transform:scaleY(.04)}1%{opacity:1}10%,20%{opacity:1;transform:scaleY(1)}25%,100%{opacity:0;transform:scaleY(1)}}
+    @keyframes arrive-head{0%,9%,25%,100%{opacity:0}10%,20%{opacity:1}}
+  </style>
+  <rect width="440" height="918" rx="14" fill="#FFF"/>
+  <g id="diagram-header">
+    <g transform="translate(24 25) scale(0.875)" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#101828"/><rect x="11" y="5" width="10" height="22" rx="5" fill="#FFF"/><circle cx="16" cy="10" r="2.7" fill="#F04438"/><circle cx="16" cy="16" r="2.7" fill="#FFAB16"/><circle cx="16" cy="22" r="2.7" fill="#19B980"/></g>
+    <text id="header-brand" x="64" y="47" font-size="21" fill="#101828" font-weight="750">피싱 신호등</text>
+    <text id="header-page" x="186" y="45" font-size="12.5" fill="#2563D9" font-weight="650" style="letter-spacing:0.5px">ARCHITECTURE</text>
+    <text id="header-detail" x="416" y="45" font-size="13" fill="#596779" text-anchor="end">브라우저 분석 구조</text>
+    <path d="M24 80H416" fill="none" stroke="#E3E8EF" stroke-width="1"/>
+  </g>
+  <rect id="browser-card" x="24" y="116" width="392" height="448" rx="14" fill="#F6F9FF"/>
+  <text x="48" y="162" font-size="25" fill="#101828" font-weight="650">사용자 브라우저</text>
+  <text x="48" y="194" font-size="19" fill="#2563D9" font-weight="500">연락 원문·답변은 기기 안에</text>
+  <rect id="input-card" x="48" y="222" width="344" height="116" rx="10" fill="#FFF"/>
+  <g id="input-copy" text-anchor="middle"><text x="220" y="270" font-size="24" fill="#101828" font-weight="650">입력·결과 화면</text><text x="220" y="306" font-size="19" fill="#596779" font-weight="400">토큰화 · 규칙 보정 · 행동 확인</text></g>
+  <rect id="runtime-card" x="48" y="404" width="344" height="116" rx="10" fill="#FFF"/>
+  <g id="runtime-copy" text-anchor="middle"><text x="220" y="452.14" font-size="25" fill="#101828" font-weight="650">ONNX Runtime Web</text><text x="220" y="488.14" font-size="21" fill="#2563D9" font-weight="500">Web Worker · WASM</text></g>
+  <path d="M190 346L190 396M185 389L190 396L195 389" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="189" y="346" width="2" height="50" rx="0" fill="#2563D9" class="wire-motion vertical" style="--delay:2s" aria-hidden="true"/><path d="M185 389L190 396L195 389" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head" style="--delay:2s" aria-hidden="true"/>
+  <path d="M250 396L250 346M245 353L250 346L255 353" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="249" y="346" width="2" height="50" rx="0" fill="#2563D9" class="wire-motion vertical reverse-y" style="--delay:5s" aria-hidden="true"/><path d="M245 353L250 346L255 353" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head" style="--delay:5s" aria-hidden="true"/>
+  <text x="153" y="378" font-size="18" fill="#596779" font-weight="400" text-anchor="middle">입력</text>
+  <text x="287" y="378" font-size="18" fill="#596779" font-weight="400" text-anchor="middle">결과</text>
+  <path d="M220 602L220 572M215 579L220 572L225 579" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="219" y="572" width="2" height="30" rx="0" fill="#2563D9" class="wire-motion vertical reverse-y download-motion" style="--delay:0s" aria-hidden="true"/><path d="M215 579L220 572L225 579" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head download-motion" style="--delay:0s" aria-hidden="true"/>
+  <rect id="model-card" x="24" y="610" width="392" height="82" rx="10" fill="#F5F8FC"/>
+  <g id="model-copy" text-anchor="middle"><text x="220" y="643.5" font-size="24" fill="#101828" font-weight="650">Cloudflare R2</text><text x="220" y="674.5" font-size="19" fill="#596779" font-weight="400">모델 다운로드 · 약 223MB</text></g>
+  <rect id="cases-card" x="24" y="708" width="392" height="82" rx="10" fill="#F5F8FC"/>
+  <g id="cases-copy" text-anchor="middle"><text x="220" y="741.5" font-size="24" fill="#101828" font-weight="650">Supabase</text><text x="220" y="772.5" font-size="19" fill="#596779" font-weight="400">사례 조회 · 참여</text></g>
+  <rect id="analytics-card" x="24" y="806" width="392" height="82" rx="10" fill="#F5F8FC"/>
+  <g id="analytics-copy" text-anchor="middle"><text x="220" y="839.5" font-size="24" fill="#101828" font-weight="650">Vercel Analytics</text><text x="220" y="870.5" font-size="19" fill="#596779" font-weight="400">이용 통계</text></g>
+</svg>

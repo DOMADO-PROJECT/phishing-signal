@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1290" viewBox="0 0 1280 1290" role="img" aria-labelledby="title desc" xml:lang="ko">
+  <title id="title">데이터셋별 모델 평가 기록</title>
+  <desc id="desc">데이터셋별 모델 평가 기록입니다. 초기 검증셋 225개에서 규칙 단독, C1, C2, 규칙+C3, 규칙+C1→C3, C3 단독의 정답률은 각각 43.56%, 71.56%, 71.11%, 72.89%, 73.78%, 75.11%입니다. 9월 5일 Notion의 Gold v2 144개 기록에서 Rules v3, C1-G, 규칙+C1-G, 당시 C3의 정답률은 57.6%, 72.2%, 72.2%, 94.4%입니다. 9월 16일 새 기준 205개에서 당시 C3, v16, 새 FP32 후보와 근거 정책, 같은 후보의 FP16 저장/FP32 연산과 근거 정책은 각각 59.51%, 74.15%, 81.95%, 81.95%입니다. 이 후보는 고정 4426 모델이며 9월 16일 서비스에 반영됐습니다. 9월 20일 출시한 현재 C3 v2 epoch3와 고정 정책은 최신 고정 205개에서 165개 정답, 정답률 80.49%입니다. Gold v2는 평가셋 이름, C1-G는 경량 분류 모델, v16은 학습량 조정 후보, 4426은 개선 모델 식별값입니다. FP32·FP16은 가중치 저장 방식이고 정책은 AI 판정을 보정하는 규칙입니다. 평가셋이 달라 구역 간 점수를 직접 비교할 수 없습니다. 수치와 막대 길이는 고정하고, 강조 배경을 01·02·03 순서로 채운 뒤 현재 점수를 한 번 강조합니다. 모션 감소 설정에서는 정적으로 표시합니다.</desc>
+  <style>
+    text{font-family:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;letter-spacing:-.35px}
+    .numeric{font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+    .selection-wash{transform-box:fill-box;transform-origin:left center}
+    @media(prefers-reduced-motion:no-preference){
+      .selection-wash{animation:selection-fill .75s cubic-bezier(.23,1,.32,1) both;animation-delay:var(--selection-delay,0s)}
+      .score-reveal{animation:score-settle .65s cubic-bezier(.23,1,.32,1) both;animation-delay:3.45s}
+    }
+    @keyframes selection-fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    @keyframes score-settle{from{opacity:.45;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  </style>
+  <rect width="1280" height="1290" rx="14" fill="#FFF"/>
+  <g id="diagram-header">
+    <g transform="translate(40 25) scale(1)" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#101828"/><rect x="11" y="5" width="10" height="22" rx="5" fill="#FFF"/><circle cx="16" cy="10" r="2.7" fill="#F04438"/><circle cx="16" cy="16" r="2.7" fill="#FFAB16"/><circle cx="16" cy="22" r="2.7" fill="#19B980"/></g>
+  <text x="86" y="53" font-size="28" fill="#101828" font-weight="750" id="header-brand">피싱 신호등</text>
+  <text x="250" y="51" font-size="16" fill="#2563D9" font-weight="650" id="header-page" style="letter-spacing:.5px">MODEL EVALUATION</text>
+  <text x="1240" y="51" font-size="16" fill="#596779" font-weight="400" text-anchor="end" id="header-detail">데이터셋별 모델 평가 · 초기부터 현재까지</text>
+    <path d="M40 80H1240" fill="none" stroke="#E3E8EF" stroke-width="1"/>
+  </g>
+  <g data-stage="initial225" data-sample-count="225" data-metric="accuracy">
+  <text x="40" y="130" font-size="24" fill="#101828" font-weight="650" text-anchor="start"><tspan>01</tspan><tspan dx="12">초기 모델 구성 비교</tspan></text>
+  <text x="1240" y="130" font-size="18" fill="#596779" font-weight="400" text-anchor="end">초기 검증셋 · 225개</text>
+  <text x="40" y="174" font-size="18" fill="#596779" font-weight="400" text-anchor="start">구성</text>
+  <text x="1240" y="174" font-size="18" fill="#596779" font-weight="400" text-anchor="end">정답률</text>
+  <path id="initial-divider" d="M40 198H1240" fill="none" stroke="#E3E8EF" stroke-width="1"/>
+  <g id="initial-rows" transform="translate(0 16)">
+  <text x="40" y="222" font-size="24" fill="#101828" font-weight="650" text-anchor="start">규칙 단독</text>
+  <rect x="392" y="208" width="704" height="12" rx="0" fill="#E5EAF0"/>
+  <rect x="392" y="208" width="306.662" height="12" rx="0" fill="#94A3B8" class="metric stage1" data-model="A0" data-value="43.56"/>
+  <text x="1240" y="222" font-size="26" fill="#101828" font-weight="650" text-anchor="end" class="numeric">43.56%</text>
+  <text x="40" y="278" font-size="24" fill="#101828" font-weight="650" text-anchor="start">C1 경량 모델</text>
+  <rect x="392" y="264" width="704" height="12" rx="0" fill="#E5EAF0"/>
+  <rect x="392" y="264" width="503.782" height="12" rx="0" fill="#94A3B8" class="metric stage1" data-model="A1" data-value="71.56"/>
+  <text x="1240" y="278" font-size="26" fill="#101828" font-weight="650" text-anchor="end" class="numeric">71.56%</text>
+  <text x="40" y="334" font-size="24" fill="#101828" font-weight="650" text-anchor="start">C2 문맥 모델</text>
+  <rect x="392" y="320" width="704" height="12" rx="0" fill="#E5EAF0"/>
+  <rect x="392" y="320" width="500.614" height="12" rx="0" fill="#94A3B8" class="metric stage1" data-model="A2" data-value="71.11"/>
+  <text x="1240" y="334" font-size="26" fill="#101828" font-weight="650" text-anchor="end" class="numeric">71.11%</text>
+  <text x="40" y="390" font-size="24" fill="#101828" font-weight="650" text-anchor="start">규칙 + C3</text>
+  <rect x="392" y="376" width="704" height="12" rx="0" fill="#E5EAF0"/>
+  <rect x="392" y="376" width="513.146" height="12" rx="0" fill="#94A3B8" class="metric stage1" data-model="H3" data-value="72.89"/>
+  <text x="1240" y="390" font-size="26" fill="#101828" font-weight="650" text-anchor="end" class="numeric">72.89%</text>
+  <text x="40" y="446" font-size="24" fill="#101828" font-weight="650" text-anchor="start">규칙 + C1 → C3</text>
+  <rect x="392" y="432" width="704" height="12" rx="0" fill="#E5EAF0"/>
+  <rect x="392" y="432" width="519.411" height="12" rx="0" fill="#94A3B8" class="metric stage1" data-model="H5_P3" data-value="73.78"/>
+  <text x="1240" y="446" font-size="26" fill="#101828" font-weight="650" text-anchor="end" class="numeric">73.78%</text>
+  <rect x="28" y="470" width="1224" height="44" rx="8" fill="#ECF3FF" class="selection-wash" style="--selection-delay:0.35s"/>
+  <text x="40" y="502" font-size="24" fill="#2563D9" font-weight="650" text-anchor="start">C3 단일 모델</text>
+  <rect x="392" y="488" width="704" height="12" rx="0" fill="#E5EAF0"/>
+  <rect x="392" y="488" width="528.774" height="12" rx="0" fill="#2563D9" class="metric stage1" data-model="A3" data-value="75.11"/>
+  <text x="1240" y="502" font-size="26" fill="#2563D9" font-weight="650" text-anchor="end" class="numeric">75.11%</text>
+  </g>
+  <g id="initial-axis" fill="#596779" font-size="16" text-anchor="middle" class="numeric">
+    <path d="M392 538v6M744 538v6M1096 538v6" fill="none" stroke="#B6C2D1" stroke-width="1"/>
+    <text x="392" y="560">0</text><text x="744" y="560">50</text><text x="1096" y="560">100</text>
+  </g>
+  </g>
+  <g data-stage="gold_v2" data-sample-count="144" data-metric="accuracy">
+  <rect x="40" y="590" width="588" height="390" rx="10" fill="#F6F8FB"/>
+  <text x="64" y="630" font-size="24" fill="#101828" font-weight="650" text-anchor="start"><tspan>02</tspan><tspan dx="12">Gold v2 모델 비교</tspan></text>
+  <text x="64" y="658" font-size="17" fill="#596779" font-weight="400" text-anchor="start">골드 평가셋 v2 · 2026.09.05 기록</text>
+  <text x="604" y="658" font-size="17" fill="#596779" font-weight="400" text-anchor="end">정답률</text>
+  <text x="64" y="706" font-size="21" fill="#101828" font-weight="600" text-anchor="start">Rules v3</text>
+  <text x="604" y="706" font-size="24" fill="#101828" font-weight="650" text-anchor="end" class="numeric">57.6%</text>
+  <rect x="64" y="720" width="540" height="8" rx="0" fill="#E5EAF0"/>
+  <rect x="64" y="720" width="311.04" height="8" rx="0" fill="#94A3B8" class="metric stage2" data-model="rules_v3" data-value="57.6"/>
+  <text x="64" y="766" font-size="21" fill="#101828" font-weight="600" text-anchor="start">C1-G</text>
+  <text x="604" y="766" font-size="24" fill="#101828" font-weight="650" text-anchor="end" class="numeric">72.2%</text>
+  <rect x="64" y="780" width="540" height="8" rx="0" fill="#E5EAF0"/>
+  <rect x="64" y="780" width="389.88" height="8" rx="0" fill="#94A3B8" class="metric stage2" data-model="c1_g" data-value="72.2"/>
+  <text x="64" y="826" font-size="21" fill="#101828" font-weight="600" text-anchor="start">규칙 + C1-G</text>
+  <text x="604" y="826" font-size="24" fill="#101828" font-weight="650" text-anchor="end" class="numeric">72.2%</text>
+  <rect x="64" y="840" width="540" height="8" rx="0" fill="#E5EAF0"/>
+  <rect x="64" y="840" width="389.88" height="8" rx="0" fill="#94A3B8" class="metric stage2" data-model="rules_c1_g" data-value="72.2"/>
+  <rect x="52" y="859" width="564" height="53" rx="6" fill="#ECF3FF" class="selection-wash" style="--selection-delay:1.35s"/>
+  <text x="64" y="886" font-size="21" fill="#2563D9" font-weight="600" text-anchor="start">당시 C3</text>
+  <text x="604" y="886" font-size="24" fill="#2563D9" font-weight="650" text-anchor="end" class="numeric">94.4%</text>
+  <rect x="64" y="900" width="540" height="8" rx="0" fill="#E5EAF0"/>
+  <rect x="64" y="900" width="509.76" height="8" rx="0" fill="#2563D9" class="metric stage2" data-model="production_c3" data-value="94.4"/>
+  <text x="64" y="959" font-size="16" fill="#596779" font-weight="400" text-anchor="start">당시 C3 · 136 / 144개 정답</text>
+  </g>
+  <g data-stage="new205" data-sample-count="205" data-metric="accuracy">
+  <rect x="652" y="590" width="588" height="390" rx="10" fill="#F6F8FB"/>
+  <text x="676" y="630" font-size="24" fill="#101828" font-weight="650" text-anchor="start"><tspan>03</tspan><tspan dx="12">새 기준 모델 비교</tspan></text>
+  <text x="676" y="658" font-size="17" fill="#596779" font-weight="400" text-anchor="start">새 기준 평가셋 · 2026.09.16 기록</text>
+  <text x="1216" y="658" font-size="17" fill="#596779" font-weight="400" text-anchor="end">정답률</text>
+  <text x="676" y="706" font-size="21" fill="#101828" font-weight="600" text-anchor="start">당시 C3</text>
+  <text x="1216" y="706" font-size="24" fill="#101828" font-weight="650" text-anchor="end" class="numeric">59.51%</text>
+  <rect x="676" y="720" width="540" height="8" rx="0" fill="#E5EAF0"/>
+  <rect x="676" y="720" width="321.354" height="8" rx="0" fill="#94A3B8" class="metric stage3" data-model="production_c3" data-value="59.51"/>
+  <text x="676" y="766" font-size="21" fill="#101828" font-weight="600" text-anchor="start">v16</text>
+  <text x="1216" y="766" font-size="24" fill="#101828" font-weight="650" text-anchor="end" class="numeric">74.15%</text>
+  <rect x="676" y="780" width="540" height="8" rx="0" fill="#E5EAF0"/>
+  <rect x="676" y="780" width="400.41" height="8" rx="0" fill="#94A3B8" class="metric stage3" data-model="v16" data-value="74.15"/>
+  <text x="676" y="826" font-size="21" fill="#101828" font-weight="600" text-anchor="start">4426 · FP32 + 정책</text>
+  <text x="1216" y="826" font-size="24" fill="#101828" font-weight="650" text-anchor="end" class="numeric">81.95%</text>
+  <rect x="676" y="840" width="540" height="8" rx="0" fill="#E5EAF0"/>
+  <rect x="676" y="840" width="442.53" height="8" rx="0" fill="#94A3B8" class="metric stage3" data-model="fp32" data-value="81.95"/>
+  <rect x="664" y="859" width="564" height="53" rx="6" fill="#ECF3FF" class="selection-wash" style="--selection-delay:2.35s"/>
+  <text x="676" y="886" font-size="21" fill="#2563D9" font-weight="600" text-anchor="start">4426 · FP16 저장 + 정책</text>
+  <text x="1216" y="886" font-size="24" fill="#2563D9" font-weight="650" text-anchor="end" class="numeric">81.95%</text>
+  <rect x="676" y="900" width="540" height="8" rx="0" fill="#E5EAF0"/>
+  <rect x="676" y="900" width="442.53" height="8" rx="0" fill="#2563D9" class="metric stage3" data-model="fp16_storage" data-value="81.95"/>
+  <text x="676" y="959" font-size="16" fill="#596779" font-weight="400" text-anchor="start">4426 + 정책 · 168 / 205개 정답</text>
+  </g>
+  <g data-stage="current205" data-sample-count="205" data-metric="accuracy">
+  <rect x="40" y="1010" width="1200" height="154" rx="10" fill="#F6F8FB"/>
+  <g id="current-copy" transform="translate(0 8.11)">
+  <text x="68" y="1050" font-size="24" fill="#101828" font-weight="650" text-anchor="start"><tspan>04</tspan><tspan dx="12">현재 서비스</tspan></text>
+  <text x="68" y="1092" font-size="27" fill="#101828" font-weight="650" text-anchor="start">C3 v2 epoch3 + 고정 정책</text>
+  <text x="68" y="1125" font-size="17" fill="#596779" font-weight="400" text-anchor="start">최신 평가셋 · 2026.09.20 출시</text>
+  </g>
+  <g id="current-score" transform="translate(0 -13)">
+  <g class="score-reveal" data-model="c3_v2_epoch3_policy" data-value="80.49">
+  <text x="1080" y="1102" font-size="50" fill="#2563D9" font-weight="700" text-anchor="middle" class="numeric">80.49%</text>
+  </g>
+  <text x="1080" y="1138" font-size="18" fill="#596779" font-weight="400" text-anchor="middle">정답률 · 165 / 205개 정답</text>
+  </g>
+  </g>
+  <g id="evaluation-terms">
+  <text x="40" y="1215" font-size="17" fill="#596779" font-weight="400" text-anchor="start">Gold v2: 평가셋 이름 · C1-G: 경량 분류 모델 · v16: 학습량 조정 후보 · 4426: 개선 모델 식별값</text>
+  <text x="40" y="1242" font-size="17" fill="#596779" font-weight="400" text-anchor="start">FP32·FP16: 가중치 저장 방식 · 정책: AI 판정 보정 규칙</text>
+  </g>
+  <text id="evaluation-note" x="1240" y="1242" font-size="17" fill="#596779" font-weight="400" text-anchor="end">평가셋이 달라 구역 간 점수를 직접 비교할 수 없습니다.</text>
+</svg>

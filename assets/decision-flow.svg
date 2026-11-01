@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="550" viewBox="0 0 1280 550" role="img" aria-labelledby="title desc" xml:lang="ko">
+  <title id="title">연락 확인과 다음 행동</title>
+  <desc id="desc">연락 입력, 브라우저 AI 판정, Safe의 규칙 재확인, 행동 확인의 순서입니다. AI의 Dangerous·Hold는 유지하고 Safe만 규칙을 확인합니다. 추가 확인이 필요한 근거가 있으면 Hold로 보정합니다. 최종 Safe이고 피해 상황이 없을 때 송금·정보 전달·앱 설치 요구를 확인합니다. 요구가 있거나 모르거나 응답하지 않으면 행동 보류, 요구가 없으면 위험 신호 미확인으로 안내합니다. 사용자 답변은 모델 라벨을 바꾸지 않습니다. 이미 송금·정보 전달·앱 설치를 했다면 별도 긴급 대응을 바로 이용합니다. 화살표가 도착하면 다음 카드가 짧게 밝아졌다 제자리로 돌아옵니다. 모션은 Safe 경로를 읽는 순서이며 실제 처리 시간이나 진행률이 아닙니다. 모션 감소 시 연결과 내용은 정적으로 표시됩니다.</desc>
+  <style>
+    text{font-family:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;letter-spacing:-.35px}
+    .numeric{font-variant-numeric:tabular-nums;letter-spacing:-1px}
+    .wire-motion,.wire-head{opacity:0}
+    .wire-motion{transform-box:fill-box;transform-origin:left center}
+    .vertical{transform-origin:center top}.vertical.reverse-y{transform-origin:center bottom}.reverse{transform-origin:right center}
+    @media(prefers-reduced-motion:no-preference){
+      .wire-motion{animation:connect 10s linear infinite both;animation-delay:var(--delay,0s)}
+      .wire-motion.vertical{animation-name:connect-down}
+      .wire-head{animation:arrive-head 10s linear infinite both;animation-delay:var(--delay,0s)}
+      .flow-card{animation:receive 10s ease-out infinite;animation-delay:var(--delay,0s)}
+      .flow-card>rect{animation:receive-surface 10s ease-out infinite;animation-delay:var(--delay,0s)}
+    }
+    @keyframes connect{0%{opacity:0;transform:scaleX(.04)}1%{opacity:1}10%,20%{opacity:1;transform:scaleX(1)}25%,100%{opacity:0;transform:scaleX(1)}}
+    @keyframes connect-down{0%{opacity:0;transform:scaleY(.04)}1%{opacity:1}10%,20%{opacity:1;transform:scaleY(1)}25%,100%{opacity:0;transform:scaleY(1)}}
+    @keyframes arrive-head{0%,9%,25%,100%{opacity:0}10%,20%{opacity:1}}
+    @keyframes receive{0%,9%,18%,100%{transform:translateY(0)}11%,13%{transform:translateY(-2px)}}
+    @keyframes receive-surface{0%,9%,18%,100%{fill:#F1F3F6}11%,13%{fill:#E5EEFF}}
+  </style>
+  <rect width="1280" height="550" rx="14" fill="#FFF"/>
+  <g id="diagram-header">
+    <g transform="translate(40 25) scale(1)" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#101828"/><rect x="11" y="5" width="10" height="22" rx="5" fill="#FFF"/><circle cx="16" cy="10" r="2.7" fill="#F04438"/><circle cx="16" cy="16" r="2.7" fill="#FFAB16"/><circle cx="16" cy="22" r="2.7" fill="#19B980"/></g>
+    <text id="header-brand" x="86" y="53" font-size="28" fill="#101828" font-weight="750">피싱 신호등</text>
+    <text id="header-page" x="250" y="51" font-size="16" fill="#2563D9" font-weight="650" style="letter-spacing:1px">CONTACT FLOW</text>
+    <text id="header-detail" x="1240" y="51" font-size="16" fill="#596779" text-anchor="end">연락 확인과 다음 행동</text>
+    <path d="M40 80H1240" fill="none" stroke="#E3E8EF" stroke-width="1"/>
+  </g>
+  <rect id="step-1-card" x="40" y="140" width="264" height="218" rx="10" fill="#F1F3F6"/>
+  <path d="M50 140H294Q304 140 304 150V196H40V150Q40 140 50 140Z" fill="#30435F"/>
+  <g id="step-1-title" text-anchor="middle"><text x="172" y="175.2" font-size="24" fill="#FFF" font-weight="650"><tspan>01</tspan><tspan dx="12">연락 입력</tspan></text></g>
+  <g id="step-1-copy" text-anchor="middle"><text x="172" y="267.1" font-size="22" fill="#596779" font-weight="400">문자·메신저 내용을</text><text x="172" y="300.1" font-size="22" fill="#596779" font-weight="400">붙여넣기</text></g>
+  <g class="flow-card" style="--delay:0s">
+  <rect id="step-2-card" x="352" y="140" width="264" height="218" rx="10" fill="#F1F3F6"/>
+  <path d="M362 140H606Q616 140 616 150V196H352V150Q352 140 362 140Z" fill="#30435F"/>
+  <g id="step-2-title" text-anchor="middle"><text x="484" y="175.2" font-size="24" fill="#FFF" font-weight="650"><tspan>02</tspan><tspan dx="12">AI 판정</tspan></text></g>
+  <g id="step-2-copy" text-anchor="middle"><text x="484" y="267.74" font-size="22" fill="#596779" font-weight="400">브라우저에서 분석</text><text x="484" y="300.74" font-size="18" fill="#596779" font-weight="400">Dangerous · Hold · Safe</text></g>
+  </g>
+  <g class="flow-card" style="--delay:2s">
+  <rect id="step-3-card" x="664" y="140" width="264" height="218" rx="10" fill="#F1F3F6"/>
+  <path d="M674 140H918Q928 140 928 150V196H664V150Q664 140 674 140Z" fill="#30435F"/>
+  <g id="step-3-title" text-anchor="middle"><text x="796" y="175.2" font-size="24" fill="#FFF" font-weight="650"><tspan>03</tspan><tspan dx="12">규칙 재확인</tspan></text></g>
+  <g id="step-3-copy" text-anchor="middle"><text x="796" y="250.3" font-size="21" fill="#2563D9" font-weight="550">Safe일 때만 확인</text><text x="796" y="283.3" font-size="20" fill="#596779" font-weight="400">추가 확인 근거가 있으면</text><text x="796" y="316.3" font-size="21" fill="#8C600B" font-weight="550">Hold로 보정</text></g>
+  </g>
+  <g class="flow-card" style="--delay:4s">
+  <rect id="step-4-card" x="976" y="140" width="264" height="218" rx="10" fill="#F1F3F6"/>
+  <path d="M986 140H1230Q1240 140 1240 150V196H976V150Q976 140 986 140Z" fill="#30435F"/>
+  <g id="step-4-title" text-anchor="middle"><text x="1108" y="175.2" font-size="24" fill="#FFF" font-weight="650"><tspan>04</tspan><tspan dx="12">행동 요구 확인</tspan></text></g>
+  <g id="step-4-copy" text-anchor="middle"><text x="1108" y="249.31" font-size="18.5" fill="#2563D9" font-weight="500">최종 Safe · 피해 상황 없음</text><text x="1108" y="282.31" font-size="18" fill="#101828" font-weight="500">있음·모름·미응답 → 행동 보류</text><text x="1108" y="315.31" font-size="20" fill="#101828" font-weight="500">없음 → 위험 신호 미확인</text></g>
+  </g>
+  <path d="M312 249L344 249M337 244L344 249L337 254" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="312" y="248" width="32" height="2" rx="0" fill="#2563D9" class="wire-motion" style="--delay:0s" aria-hidden="true"/><path d="M337 244L344 249L337 254" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head" style="--delay:0s" aria-hidden="true"/>
+  <path d="M624 249L656 249M649 244L656 249L649 254" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="624" y="248" width="32" height="2" rx="0" fill="#2563D9" class="wire-motion" style="--delay:2s" aria-hidden="true"/><path d="M649 244L656 249L649 254" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head" style="--delay:2s" aria-hidden="true"/>
+  <path d="M936 249L968 249M961 244L968 249L961 254" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="936" y="248" width="32" height="2" rx="0" fill="#2563D9" class="wire-motion" style="--delay:4s" aria-hidden="true"/><path d="M961 244L968 249L961 254" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head" style="--delay:4s" aria-hidden="true"/>
+  <rect id="urgent-card" x="40" y="414" width="1200" height="96" rx="10" fill="#FEECEB"/>
+  <g id="urgent-condition" text-anchor="start"><text x="72" y="469.2" font-size="24" fill="#B42318" font-weight="500">이미 송금·정보 전달·앱 설치를 했다면</text></g>
+  <path d="M794 462L868 462M861 457L868 462L861 467" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g id="urgent-copy" text-anchor="middle"><text x="1050" y="470.4" font-size="28" fill="#B42318" font-weight="650">긴급 대응</text></g>
+</svg>
