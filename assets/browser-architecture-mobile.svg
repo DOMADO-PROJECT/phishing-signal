@@ -1,23 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="440" height="918" viewBox="0 0 440 918" role="img" aria-labelledby="title desc" xml:lang="ko">
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="880" viewBox="0 0 440 880" role="img" aria-labelledby="title desc" xml:lang="ko">
   <title id="title">브라우저 안에서 분석</title>
-  <desc id="desc">연락 원문과 행동 확인 답변은 사용자 브라우저 안에서 처리합니다. 입력·결과 화면은 토큰화, 규칙 보정과 행동 확인을 담당하며 ONNX Runtime Web은 Web Worker와 WASM으로 모델을 실행합니다. Cloudflare R2에서 약 223MB 모델을 내려받습니다. Supabase의 사례 조회·참여, Vercel Analytics의 이용 통계는 별도 외부 통신입니다. 연락 원문과 답변을 외부 AI 추론 API에 보내지 않습니다. 모델 다운로드는 한 번 강조하고, 브라우저 내부 입력·결과 전달 방향을 순서대로 반복합니다. 사례·통계는 분석과 별도 통신으로 구분합니다. 모션은 실제 실행 시간이나 모든 네트워크 요청을 뜻하지 않습니다. 모션 감소 시 정적으로 표시됩니다.</desc>
+  <desc id="desc">연락 원문과 행동 확인 답변은 사용자 브라우저 안에서 처리합니다. 입력·결과 화면은 토큰화, 규칙 보정과 행동 확인을 담당하며 ONNX Runtime Web은 Web Worker와 WASM으로 모델을 실행합니다. Cloudflare R2에서 약 223MB 모델을 내려받고 같은 탭에서는 준비된 모델을 재사용합니다. Supabase의 사례 조회·참여는 별도 외부 통신입니다. 연락 원문과 답변을 외부 AI 추론 API에 보내지 않습니다. 모델 전달을 나타내는 점, 연산 표시, 결과 카드 강조를 10초 주기로 반복합니다. Supabase 카드는 고정하고 사례 통신의 양방향 점선이 계속 흐릅니다. 모션은 처리 흐름을 설명하기 위한 반복입니다. 실제 다운로드 횟수, 실행 시간이나 모든 네트워크 요청을 뜻하지 않습니다. 모션 감소 시 정적으로 표시됩니다.</desc>
   <style>
     text{font-family:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;letter-spacing:-.35px}
     .numeric{font-variant-numeric:tabular-nums;letter-spacing:-1px}
-    .wire-motion,.wire-head{opacity:0}
+    .wire-motion,.wire-head,.download-packet{opacity:0}
     .wire-motion{transform-box:fill-box;transform-origin:left center}
     .vertical{transform-origin:center top}.vertical.reverse-y{transform-origin:center bottom}.reverse{transform-origin:right center}
     @media(prefers-reduced-motion:no-preference){
       .wire-motion{animation:connect 10s linear infinite both;animation-delay:var(--delay,0s)}
       .wire-motion.vertical{animation-name:connect-down}
       .wire-head{animation:arrive-head 10s linear infinite both;animation-delay:var(--delay,0s)}
-      .download-motion{animation-iteration-count:1}
+      .flow-card{animation:receive 10s ease-out infinite;animation-delay:var(--delay,0s)}
+      .flow-card>rect{animation:receive-surface 10s ease-out infinite;animation-delay:var(--delay,0s)}
+      .download-packet{animation:download 10s linear infinite both;animation-delay:var(--delay,0s)}
+      .compute-dot{animation:compute 10s ease-in-out infinite;animation-delay:var(--delay,0s)}
+      .cases-wire{animation:dash-flow .9s linear infinite}
     }
     @keyframes connect{0%{opacity:0;transform:scaleX(.04)}1%{opacity:1}10%,20%{opacity:1;transform:scaleX(1)}25%,100%{opacity:0;transform:scaleX(1)}}
     @keyframes connect-down{0%{opacity:0;transform:scaleY(.04)}1%{opacity:1}10%,20%{opacity:1;transform:scaleY(1)}25%,100%{opacity:0;transform:scaleY(1)}}
     @keyframes arrive-head{0%,9%,25%,100%{opacity:0}10%,20%{opacity:1}}
+    @keyframes receive{0%,28%,100%{transform:translateY(0)}6%,18%{transform:translateY(-2px)}}
+    @keyframes receive-surface{0%,28%,100%{fill:var(--surface,#FFF)}6%,18%{fill:#E5EEFF}}
+    @keyframes download{0%,3%{opacity:0;transform:translate(0,0)}5%{opacity:1}17%{opacity:1;transform:translate(var(--travel-x),var(--travel-y))}20%,100%{opacity:0;transform:translate(var(--travel-x),var(--travel-y))}}
+    @keyframes compute{0%,30%,50%,100%{fill:#BBD0F6;transform:translateY(0)}35%,43%{fill:#2563D9;transform:translateY(-3px)}}
+    @keyframes dash-flow{to{stroke-dashoffset:-9}}
   </style>
-  <rect width="440" height="918" rx="14" fill="#FFF"/>
+  <rect width="440" height="880" rx="14" fill="#FFF"/>
   <g id="diagram-header">
     <g transform="translate(24 25) scale(0.875)" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#101828"/><rect x="11" y="5" width="10" height="22" rx="5" fill="#FFF"/><circle cx="16" cy="10" r="2.7" fill="#F04438"/><circle cx="16" cy="16" r="2.7" fill="#FFAB16"/><circle cx="16" cy="22" r="2.7" fill="#19B980"/></g>
     <text id="header-brand" x="64" y="47" font-size="21" fill="#101828" font-weight="750">피싱 신호등</text>
@@ -28,19 +37,27 @@
   <rect id="browser-card" x="24" y="116" width="392" height="448" rx="14" fill="#F6F9FF"/>
   <text x="48" y="162" font-size="25" fill="#101828" font-weight="650">사용자 브라우저</text>
   <text x="48" y="194" font-size="19" fill="#2563D9" font-weight="500">연락 원문·답변은 기기 안에</text>
+  <g class="flow-card" style="--delay:5.6s">
   <rect id="input-card" x="48" y="222" width="344" height="116" rx="10" fill="#FFF"/>
   <g id="input-copy" text-anchor="middle"><text x="220" y="270" font-size="24" fill="#101828" font-weight="650">입력·결과 화면</text><text x="220" y="306" font-size="19" fill="#596779" font-weight="400">토큰화 · 규칙 보정 · 행동 확인</text></g>
+  </g>
+  <g class="flow-card" style="--delay:2.6s">
   <rect id="runtime-card" x="48" y="404" width="344" height="116" rx="10" fill="#FFF"/>
   <g id="runtime-copy" text-anchor="middle"><text x="220" y="452.14" font-size="25" fill="#101828" font-weight="650">ONNX Runtime Web</text><text x="220" y="488.14" font-size="21" fill="#2563D9" font-weight="500">Web Worker · WASM</text></g>
+  <g fill="#BBD0F6" aria-hidden="true"><circle cx="204" cy="508" r="3" class="compute-dot" style="--delay:0s"/><circle cx="220" cy="508" r="3" class="compute-dot" style="--delay:.2s"/><circle cx="236" cy="508" r="3" class="compute-dot" style="--delay:.4s"/></g>
+  </g>
   <path d="M190 346L190 396M185 389L190 396L195 389" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="189" y="346" width="2" height="50" rx="0" fill="#2563D9" class="wire-motion vertical" style="--delay:2s" aria-hidden="true"/><path d="M185 389L190 396L195 389" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head" style="--delay:2s" aria-hidden="true"/>
   <path d="M250 396L250 346M245 353L250 346L255 353" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="249" y="346" width="2" height="50" rx="0" fill="#2563D9" class="wire-motion vertical reverse-y" style="--delay:5s" aria-hidden="true"/><path d="M245 353L250 346L255 353" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head" style="--delay:5s" aria-hidden="true"/>
   <text x="153" y="378" font-size="18" fill="#596779" font-weight="400" text-anchor="middle">입력</text>
   <text x="287" y="378" font-size="18" fill="#596779" font-weight="400" text-anchor="middle">결과</text>
-  <path d="M220 602L220 572M215 579L220 572L225 579" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="219" y="572" width="2" height="30" rx="0" fill="#2563D9" class="wire-motion vertical reverse-y download-motion" style="--delay:0s" aria-hidden="true"/><path d="M215 579L220 572L225 579" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head download-motion" style="--delay:0s" aria-hidden="true"/>
-  <rect id="model-card" x="24" y="610" width="392" height="82" rx="10" fill="#F5F8FC"/>
-  <g id="model-copy" text-anchor="middle"><text x="220" y="643.5" font-size="24" fill="#101828" font-weight="650">Cloudflare R2</text><text x="220" y="674.5" font-size="19" fill="#596779" font-weight="400">모델 다운로드 · 약 223MB</text></g>
-  <rect id="cases-card" x="24" y="708" width="392" height="82" rx="10" fill="#F5F8FC"/>
-  <g id="cases-copy" text-anchor="middle"><text x="220" y="741.5" font-size="24" fill="#101828" font-weight="650">Supabase</text><text x="220" y="772.5" font-size="19" fill="#596779" font-weight="400">사례 조회 · 참여</text></g>
-  <rect id="analytics-card" x="24" y="806" width="392" height="82" rx="10" fill="#F5F8FC"/>
-  <g id="analytics-copy" text-anchor="middle"><text x="220" y="839.5" font-size="24" fill="#101828" font-weight="650">Vercel Analytics</text><text x="220" y="870.5" font-size="19" fill="#596779" font-weight="400">이용 통계</text></g>
+  <path d="M220 602L220 572M215 579L220 572L225 579" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="219" y="572" width="2" height="30" rx="0" fill="#2563D9" class="wire-motion vertical reverse-y" style="--delay:0s" aria-hidden="true"/><path d="M215 579L220 572L225 579" fill="none" stroke="#2563D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wire-head" style="--delay:0s" aria-hidden="true"/>
+  <g fill="#2563D9" style="--travel-x:0px;--travel-y:-18px" aria-hidden="true"><circle cx="220" cy="596" r="3" class="download-packet"/><circle cx="220" cy="596" r="3" class="download-packet" style="--delay:.35s"/><circle cx="220" cy="596" r="3" class="download-packet" style="--delay:.7s"/></g>
+  <g class="flow-card" style="--surface:#F5F8FC">
+  <rect id="model-card" x="24" y="610" width="392" height="112" rx="10" fill="#F5F8FC"/>
+  <g id="model-copy" text-anchor="middle"><text x="220" y="646" font-size="24" fill="#101828" font-weight="650">Cloudflare R2</text><text x="220" y="674" font-size="19" fill="#596779" font-weight="400">모델 다운로드 · 약 223MB</text><text x="220" y="704" font-size="16" fill="#2563D9" font-weight="500">첫 분석 시 준비 · 같은 탭에서 재사용</text></g>
+  </g>
+  <rect id="cases-card" x="24" y="738" width="392" height="112" rx="10" fill="#F5F8FC"/>
+  <g id="cases-copy" text-anchor="middle"><text x="220" y="774" font-size="24" fill="#101828" font-weight="650">Supabase</text><text x="220" y="802" font-size="19" fill="#596779" font-weight="400">사례 조회 · 참여</text><text x="220" y="832" font-size="16" fill="#596779" font-weight="400">연락 분석과 별도 통신</text></g>
+  <path d="M24 544H12V774H14" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-dasharray="4 5" stroke-linecap="round" stroke-linejoin="round" class="cases-wire"/><path d="M17 769L24 774L17 779" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M416 802H428V544H426" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-dasharray="4 5" stroke-linecap="round" stroke-linejoin="round" class="cases-wire"/><path d="M423 539L416 544L423 549" fill="none" stroke="#AAB7C7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

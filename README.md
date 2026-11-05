@@ -53,7 +53,7 @@ Safe 경로를 읽는 순서에 맞춰 움직임을 넣었습니다.<br>
 
 <picture>
   <source media="(max-width: 640px)" srcset="assets/browser-architecture-mobile.svg">
-  <img src="assets/browser-architecture.svg" width="1280" alt="사용자 브라우저 안에서 연락 입력, 토큰화, ONNX Runtime Web의 WASM Worker 추론, 규칙 보정과 행동 확인을 처리합니다. Cloudflare R2에서 모델 파일을 내려받습니다. Supabase의 사례 조회·참여와 Vercel Analytics의 이용 통계는 원문 분석과 별도로 통신합니다.">
+  <img src="assets/browser-architecture.svg" width="1280" alt="사용자 브라우저 안에서 연락 입력, 토큰화, ONNX Runtime Web의 WASM Worker 추론, 규칙 보정과 행동 확인을 처리합니다. Cloudflare R2에서 모델 파일을 내려받고 같은 탭에서는 재사용합니다. Supabase의 사례 조회·참여는 원문 분석과 별도로 통신합니다.">
 </picture>
 
 *처리 위치와 통신 범위를 설명하는 개념도입니다.<br>
